@@ -1,327 +1,509 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITO DESIGN</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome untuk icons -->
+    <title>ITO DESIGN - Jasa Desain Grafis Profesional</title>
+    <meta name="description"
+        content="ITO DESIGN - Jasa desain grafis profesional untuk logo, feed Instagram, poster & banner. Harga terjangkau, kualitas premium. Berbasis di Surakarta, Jawa Tengah.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/pricing.css">
+    <script src="assets/js/theme.js" defer></script>
 </head>
+
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-logo">
-                <a href="#home">
-                    <img src="assets/images/logo.png" alt="ITO DESIGN Logo" class="logo-img">
-                </a>
-            </div>
-            <ul class="navbar-menu">
-                <li><a href="#home" class="nav-link">Beranda</a></li>
-                <li><a href="#services" class="nav-link">Layanan</a></li>
-                <li><a href="#portfolio" class="nav-link">Portofolio</a></li>
-                <li><a href="#contact" class="nav-link">Kontak</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title fade-in">Jasa Desain Grafis Profesional</h1>
-            <p class="hero-subtitle fade-in">Kami membantu brand Anda tampil menonjol melalui desain logo, konten media sosial, dan materi promosi yang modern, elegan, dan berkelas.</p>
-            <div class="hero-buttons fade-in">
-                <a href="#services" class="btn btn-primary">Lihat Layanan</a>
-                <a href="#portfolio" class="btn btn-secondary">Portofolio Kami</a>
+    <!-- Immediate dark mode script to prevent flash -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#home">
+                <img src="assets/images/logo.png" alt="ITO DESIGN" class="logo-img logo-dark" />
+                <img src="assets/images/logo.png" alt="ITO DESIGN" class="logo-img logo-light" />
+            </a>
+            <nav class="nav-links">
+                <a href="#home" class="active">Beranda</a>
+                <a href="#services">Layanan</a>
+                <a href="#pricing">Paket</a>
+                <a href="#portfolio">Portofolio</a>
+                <a href="#contact">Kontak</a>
+            </nav>
+            <div class="header-actions">
+                <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Tema" aria-label="Toggle tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
-        <div class="hero-bg">
-            <div class="gradient-sphere sphere-1"></div>
-            <div class="gradient-sphere sphere-2"></div>
-        </div>
-    </section>
+    </header>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
-    <!-- MENGAPA MEMILIH KAMI -->
-    <section id="why-us" class="why-us">
-        <div class="container">
-            <h2 class="section-title">Mengapa Memilih Kami</h2>
-            <p class="section-subtitle">Kepercayaan klien adalah prioritas utama kami</p>
-            
-            <div class="why-us-grid">
-                <!-- Card 1 -->
-                <div class="why-us-card fade-in-on-scroll">
-                    <div class="card-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Pengerjaan Cepat</h3>
-                    <p>Kami memahami pentingnya waktu, sehingga setiap proyek dikerjakan dengan efisien tanpa mengurangi kualitas.</p>
+    <main class="container">
+
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="home">
+            <div class="hero-copy reveal">
+                <p class="eyebrow">Jasa Desain Grafis Profesional</p>
+                <h1>ITO DESIGN</h1>
+                <p class="typing-text">Kami membantu brand Anda tampil menonjol melalui desain logo, konten media sosial, dan materi promosi yang modern, elegan, dan berkelas.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="button">Pesan Sekarang</a>
+                    <a href="#portfolio" class="button button-secondary">Lihat Portofolio</a>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="why-us-card fade-in-on-scroll">
-                    <div class="card-icon">
-                        <i class="fas fa-tag"></i>
+                <div class="stats-badges">
+                    <div class="stat-badge">
+                        <div class="stat-value">50+</div>
+                        <div class="stat-label">Proyek Selesai</div>
                     </div>
+                    <div class="stat-badge">
+                        <div class="stat-value">30+</div>
+                        <div class="stat-label">Klien Puas</div>
+                    </div>
+                    <div class="stat-badge">
+                        <div class="stat-value">4.9★</div>
+                        <div class="stat-label">Rating Rata-rata</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WHY US ===== -->
+        <section class="section why reveal">
+            <div class="section-title">
+                <h2>Mengapa Memilih Kami</h2>
+            </div>
+            <p class="section-copy">Kepercayaan klien adalah prioritas utama kami.</p>
+            <div class="grid-4">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Pengerjaan Cepat</h3>
+                    <p>Kami memahami pentingnya waktu, sehingga setiap proyek dikerjakan dengan efisien tanpa mengurangi
+                        kualitas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-tag"></i></div>
                     <h3>Harga Transparan</h3>
                     <p>Tidak ada biaya tersembunyi. Semua harga jelas dan sesuai dengan kebutuhan Anda.</p>
                 </div>
-
-                <!-- Card 3 -->
-                <div class="why-us-card fade-in-on-scroll">
-                    <div class="card-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-star"></i></div>
                     <h3>Desain Berkualitas Tinggi</h3>
                     <p>Kami mengutamakan detail dan estetika untuk menghasilkan desain yang benar-benar profesional.</p>
                 </div>
-
-                <!-- Card 4 -->
-                <div class="why-us-card fade-in-on-scroll">
-                    <div class="card-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
                     <h3>Support 24/7</h3>
                     <p>Tim kami siap membantu dan memberikan solusi terbaik untuk kebutuhan desain Anda.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SERVICES SECTION -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Layanan Kami</h2>
-            <p class="section-subtitle">Solusi desain lengkap untuk kebutuhan bisnis Anda</p>
-            
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card fade-in-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-stamp"></i>
-                    </div>
-                    <h3>Desain Logo</h3>
-                    <p>Ciptakan identitas brand yang kuat dan berkesan dengan logo profesional yang dirancang khusus untuk bisnis Anda.</p>
-                    <a href="#contact" class="service-link">Pesan Sekarang <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="service-card fade-in-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                    <h3>Desain Feed Instagram</h3>
-                    <p>Buat konten media sosial yang eye-catching dan konsisten untuk meningkatkan engagement dengan audiens Anda.</p>
-                    <a href="#contact" class="service-link">Pesan Sekarang <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="service-card fade-in-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <h3>Poster & Banner</h3>
-                    <p>Desain poster dan banner yang menarik untuk promosi, event, atau keperluan marketing Anda.</p>
-                    <a href="#contact" class="service-link">Pesan Sekarang <i class="fas fa-arrow-right"></i></a>
-                </div>
+        <!-- ===== SERVICES ===== -->
+        <section class="section services" id="services">
+            <div class="section-title">
+                <h2>Layanan Kami</h2>
             </div>
-        </div>
-    </section>
+            <p class="section-copy">Solusi desain lengkap untuk kebutuhan bisnis Anda.</p>
+            <div class="service-grid">
+                <article class="service-card reveal">
+                    <div class="service-top">
+                        <span class="service-icon"><i class="fas fa-stamp"></i></span>
+                        <h3>Desain Logo</h3>
+                    </div>
+                    <p>Ciptakan identitas brand yang kuat dan berkesan dengan logo profesional yang dirancang khusus
+                        untuk bisnis Anda.</p>
+                    <a href="#contact" class="button button-secondary">Pesan Sekarang <span
+                            class="button-arrow">→</span></a>
+                </article>
+                <article class="service-card reveal">
+                    <div class="service-top">
+                        <span class="service-icon"><i class="fas fa-camera"></i></span>
+                        <h3>Desain Feed Instagram</h3>
+                    </div>
+                    <p>Buat konten media sosial yang eye-catching dan konsisten untuk meningkatkan engagement dengan
+                        audiens Anda.</p>
+                    <a href="#contact" class="button button-secondary">Pesan Sekarang <span
+                            class="button-arrow">→</span></a>
+                </article>
+                <article class="service-card reveal">
+                    <div class="service-top">
+                        <span class="service-icon"><i class="fas fa-image"></i></span>
+                        <h3>Desain Poster &amp; Banner</h3>
+                    </div>
+                    <p>Desain poster dan banner yang menarik untuk promosi, event, atau keperluan marketing Anda.</p>
+                    <a href="#contact" class="button button-secondary">Pesan Sekarang <span
+                            class="button-arrow">→</span></a>
+                </article>
+            </div>
+        </section>
 
-    <!-- PORTFOLIO SECTION -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2 class="section-title">Portofolio Kami</h2>
-            <p class="section-subtitle">Karya-karya terbaik Ito Design</p>
-            
+        <!-- ===== PRICING ===== -->
+        <section class="section pricing" id="pricing">
+            <div class="section-title">
+                <h2>Paket Harga Kami</h2>
+            </div>
+            <p class="section-copy">Pilih paket yang sesuai dengan kebutuhan bisnis Anda. Harga final dikonfirmasi
+                langsung oleh admin.</p>
+            <div class="pricing-grid">
+
+                <!-- Paket Basic -->
+                <div class="pricing-card basic-card reveal">
+                    <div class="pricing-tier-icon basic-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Basic</h3>
+                        <p class="pricing-tier-label">Mulai dari</p>
+                        <div class="pricing-price">
+                            <span class="pricing-currency">Rp</span>
+                            <span class="pricing-amount">30.000</span>
+                        </div>
+                    </div>
+                    <p class="pricing-description">Cocok untuk UMKM, bisnis baru, atau personal branding yang
+                        membutuhkan desain profesional dengan budget terjangkau.</p>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>3x Revisi</span>
+                        </li>
+                        <li>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>PNG, JPG, PDF</span>
+                        </li>
+                        <li>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>Resolusi Tinggi</span>
+                        </li>
+                        <li>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>Pengerjaan 3 Hari</span>
+                        </li>
+                    </ul>
+                    <button class="pricing-button" onclick="window.location.href='#contact'">
+                        Pesan Sekarang
+                    </button>
+                </div>
+
+                <!-- Paket Medium (Paling Populer) -->
+                <div class="pricing-card medium-card featured reveal">
+                    <div class="pricing-badge"><i class="fas fa-fire"></i> Paling Populer</div>
+                    <div class="pricing-tier-icon medium-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Medium</h3>
+                        <p class="pricing-tier-label">Mulai dari</p>
+                        <div class="pricing-price">
+                            <span class="pricing-currency">Rp</span>
+                            <span class="pricing-amount">55.000</span>
+                        </div>
+                    </div>
+                    <p class="pricing-description">Pilihan terbaik untuk bisnis yang ingin tampil lebih profesional
+                        dengan fleksibilitas revisi dan file yang lebih lengkap.</p>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>Maks 5x Revisi</span>
+                        </li>
+                        <li>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>PNG, JPG, PDF</span>
+                        </li>
+                        <li>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>Resolusi Tinggi</span>
+                        </li>
+                        <li>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>Source File</span>
+                        </li>
+                        <li>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>Pengerjaan 2 Hari</span>
+                        </li>
+                    </ul>
+                    <button class="pricing-button pricing-button-primary" onclick="window.location.href='#contact'">
+                        Pesan Sekarang
+                    </button>
+                </div>
+
+                <!-- Paket Pro -->
+                <div class="pricing-card pro-card reveal">
+                    <div class="pricing-tier-icon pro-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Pro</h3>
+                        <p class="pricing-tier-label">Mulai dari</p>
+                        <div class="pricing-price">
+                            <span class="pricing-currency">Rp</span>
+                            <span class="pricing-amount">80.000</span>
+                        </div>
+                    </div>
+                    <p class="pricing-description">Paket premium untuk bisnis yang ingin membangun branding kuat dan
+                        tampil maksimal di berbagai media.</p>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>Revisi Fleksibel</span>
+                        </li>
+                        <li>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>Semua Format File</span>
+                        </li>
+                        <li>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>Resolusi Tinggi</span>
+                        </li>
+                        <li>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>Source File</span>
+                        </li>
+                        <li>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>Mockup Profesional</span>
+                        </li>
+                        <li>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                            <span>Prioritas Pengerjaan</span>
+                        </li>
+                    </ul>
+                    <button class="pricing-button" onclick="window.location.href='#contact'">
+                        Pesan Sekarang
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== PORTFOLIO ===== -->
+        <section class="section portfolio" id="portfolio">
+            <div class="section-title">
+                <h2>Portofolio Kami</h2>
+            </div>
+            <p class="section-copy">Karya-karya terbaik ITO DESIGN.</p>
             <div class="portfolio-grid">
-                <!-- Portfolio Item 1: DESAIN LOGO -->
-                <div class="portfolio-item fade-in-on-scroll">
-                    <img src="assets/images/portfolio-logo.png" alt="Logo Design Portfolio">
-                    <div class="portfolio-overlay">
+                <article class="portfolio-item reveal">
+                    <div class="portfolio-thumb">
+                        <img src="assets/images/portfolio-logo.png" alt="Desain Logo">
+                    </div>
+                    <div class="portfolio-card-content">
                         <h4>Desain Logo</h4>
                         <p>Brand Identity</p>
                     </div>
-                </div>
-
-                <!-- Portfolio Item 2: DESAIN INSTAGRAM -->
-                <div class="portfolio-item fade-in-on-scroll">
-                    <img src="assets/images/portfolio-instagram.png" alt="Instagram Feed Portfolio">
-                    <div class="portfolio-overlay">
-                        <h4>Desain Instagram</h4>
+                </article>
+                <article class="portfolio-item reveal">
+                    <div class="portfolio-thumb">
+                        <img src="assets/images/portfolio-instagram.png" alt="Desain Instagram">
+                    </div>
+                    <div class="portfolio-card-content">
+                        <h4>Desain Feed Instagram</h4>
                         <p>Social Media Design</p>
                     </div>
-                </div>
-
-                <!-- Portfolio Item 3: POSTER & BANNER -->
-                <div class="portfolio-item fade-in-on-scroll">
-                    <img src="assets/images/portfolio-poster.png" alt="Poster Design Portfolio">
-                    <div class="portfolio-overlay">
+                </article>
+                <article class="portfolio-item reveal">
+                    <div class="portfolio-thumb">
+                        <img src="assets/images/portfolio-poster.png" alt="Desain Poster">
+                    </div>
+                    <div class="portfolio-card-content">
                         <h4>Typography Poster</h4>
                         <p>Unique Design</p>
                     </div>
-                </div>
-
-
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- REVIEWS SECTION -->
-    <section id="reviews" class="reviews">
-        <div class="container">
-            <h2 class="section-title">Testimoni Klien</h2>
-            <p class="section-subtitle">Kepuasan klien adalah kesuksesan kami</p>
-            
-            <div class="reviews-grid">
-                <!-- Review 1 -->
-                <div class="review-card fade-in-on-scroll">
-                    <div class="review-header">
-                        <div class="reviewer-info">
-                            <img src="https://ui-avatars.com/api/?name=Siti+Rahman&background=618bf7&color=fff" alt="Siti Rahman" class="reviewer-avatar">
-                            <div class="reviewer-details">
-                                <h4>Siti Rahman</h4>
-                                <p class="reviewer-role">Pemilik Toko Fashion Online</p>
-                            </div>
-                        </div>
-                        <div class="review-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+        <!-- ===== TESTIMONIALS ===== -->
+        <section class="section testimonials reveal">
+            <div class="section-title">
+                <h2>Testimoni Klien</h2>
+            </div>
+            <p class="section-copy">Kepuasan klien adalah kesuksesan kami.</p>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <img src="https://ui-avatars.com/api/?name=S+R&background=618bf7&color=fff" alt="Klien"
+                        class="testimonial-avatar">
+                    <div class="testimonial-content">
+                        <h4>D*** A***</h4>
+                        <p class="testimonial-role">Pemilik Toko Fashion Online</p>
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Tim ITO DESIGN sangat profesional dan responsif. Desain logo yang mereka buat untuk bisnis
+                            saya sangat cocok dan melebihi ekspektasi saya. Highly recommended!"</p>
                     </div>
-                    <p class="review-text">"Tim ITO DESIGN sangat profesional dan responsif. Desain logo yang mereka buat untuk bisnis saya sangat cocok dan melebihi ekspektasi saya. Highly recommended!"</p>
                 </div>
-
-                <!-- Review 2 -->
-                <div class="review-card fade-in-on-scroll">
-                    <div class="review-header">
-                        <div class="reviewer-info">
-                            <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=4b6ff5&color=fff" alt="Budi Santoso" class="reviewer-avatar">
-                            <div class="reviewer-details">
-                                <h4>Budi Santoso</h4>
-                                <p class="reviewer-role">Founder Startup Tech</p>
-                            </div>
-                        </div>
-                        <div class="review-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+                <div class="testimonial-card">
+                    <img src="https://ui-avatars.com/api/?name=B+S&background=4b6ff5&color=fff" alt="Klien"
+                        class="testimonial-avatar">
+                    <div class="testimonial-content">
+                        <h4>S*** A***</h4>
+                        <p class="testimonial-role">Founder Startup Tech</p>
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Desain feed Instagram yang mereka buat meningkatkan engagement kami hingga 300%. Kualitas
+                            kerja mereka luar biasa dan delivery tepat waktu."</p>
                     </div>
-                    <p class="review-text">"Desain feed Instagram yang mereka buat meningkatkan engagement kami hingga 300%. Kualitas kerja mereka luar biasa dan delivery tepat waktu."</p>
                 </div>
-
-                <!-- Review 3 -->
-                <div class="review-card fade-in-on-scroll">
-                    <div class="review-header">
-                        <div class="reviewer-info">
-                            <img src="https://ui-avatars.com/api/?name=Dina+Kusuma&background=ffa400&color=fff" alt="Dina Kusuma" class="reviewer-avatar">
-                            <div class="reviewer-details">
-                                <h4>Dina Kusuma</h4>
-                                <p class="reviewer-role">Marketing Manager UMKM</p>
-                            </div>
-                        </div>
-                        <div class="review-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+                <div class="testimonial-card">
+                    <img src="https://ui-avatars.com/api/?name=D+K&background=ffa400&color=fff" alt="Klien"
+                        class="testimonial-avatar">
+                    <div class="testimonial-content">
+                        <h4>E*** A***</h4>
+                        <p class="testimonial-role">Marketing Manager UMKM</p>
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Harga sangat terjangkau untuk kualitas yang mereka tawarkan. Tim mereka sangat kooperatif
+                            dalam menerima masukan dan revisi. Terima kasih ITO DESIGN!"</p>
                     </div>
-                    <p class="review-text">"Harga sangat terjangkau untuk kualitas yang mereka tawarkan. Tim mereka sangat kooperatif dalam menerima masukan dan revisi. Terima kasih ITO DESIGN!"</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Hubungi Kami</h2>
-            <p class="section-subtitle">Siap mewujudkan desain impian Anda</p>
-            
-            <div class="contact-content">
-                <div class="contact-form-wrapper fade-in-on-scroll">
-                    <div class="gform-redirect-container">
-                        <div class="gform-icon">
-                            <i class="fas fa-paper-plane"></i>
-                        </div>
-                        <h3>Kirim Pesan</h3>
-                        <p>Tulis pesan Anda di form kami untuk menghubungi tim ITO DESIGN. Kami akan merespons dalam waktu 24 jam.</p>
-                        <a href="https://docs.google.com/forms/d/1jUj-RqxRdTedetv3vOoLs7hSzXipnVn64OOkm6_MJws/viewform" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka Form <i class="fas fa-external-link-alt"></i></a>
-                        <p class="form-note">Form akan terbuka di tab baru</p>
-                    </div>
+        <!-- ===== CONTACT ===== -->
+        <section class="section contact reveal" id="contact">
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+            </div>
+            <p class="section-copy">Kami siap mewujudkan desain impian Anda.</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Kontak Langsung</h3>
+                    <p><strong>Lokasi:</strong> Surakarta, Jawa Tengah, Indonesia</p>
+                    <p><strong>Email:</strong> <a href="mailto:lhaikiito@gmail.com">lhaikiito@gmail.com</a></p>
+                    <p><strong>Telepon:</strong> <a href="https://wa.me/6285198110107" target="_blank"
+                            rel="noopener">+62 851 9811 0107</a></p>
+                    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/ito.dsg" target="_blank"
+                            rel="noopener">@ito.dsg</a></p>
                 </div>
+            </div>
+        </section>
 
-                <div class="contact-info fade-in-on-scroll">
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h4>Lokasi</h4>
-                            <p>Surakarta, Jawa Tengah, Indonesia</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>lhaikiito@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4>Telepon</h4>
-                            <p>+62 851 9811 0107</p>
-                        </div>
-                    </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="modern-footer">
+        <div class="footer-container">
+            <!-- Column 1: Company Profile -->
+            <div class="footer-column footer-about">
+                <h3 class="footer-title">ITO DESIGN</h3>
+                <p class="footer-desc">Membangun identitas visual yang kuat untuk masa depan bisnis Anda.</p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-column">
+                <h4 class="footer-subtitle">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#portfolio">Portofolio</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Services -->
+            <div class="footer-column">
+                <h4 class="footer-subtitle">Layanan</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Desain Logo</a></li>
+                    <li><a href="#services">Desain Feed Instagram</a></li>
+                    <li><a href="#services">Desain Poster &amp; Banner</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Social Media -->
+            <div class="footer-column footer-social">
+                <h4 class="footer-subtitle">Follow Us</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/16CExECvtr/" class="social-icon" title="Facebook"
+                        aria-label="Facebook" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5c-.563-.074-1.396-.172-2.653-.172-2.765 0-4.671 1.691-4.671 4.774v1.398z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/ito.dsg" class="social-icon" title="Instagram"
+                        aria-label="Instagram" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/6285198110107" class="social-icon" title="WhatsApp" aria-label="WhatsApp"
+                        target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>ITO DESIGN</h3>
-                    <p>Membangun identitas visual yang kuat untuk masa depan bisnis Anda.</p>
-                </div>
-                <div class="footer-social">
-                    <a href="https://www.instagram.com/ito.dsg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/share/16CExECvtr/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://pin.it/3NkhuPF74" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-                </div>
-            </div>
-            <div class="footer-divider"></div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 ITO DESIGN. Semua hak cipta dilindungi.</p>
-            </div>
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <p class="copyright">© 2026 ITO DESIGN. Semua hak cipta dilindungi.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>
